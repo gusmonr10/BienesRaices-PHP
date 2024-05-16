@@ -1,0 +1,127 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-anuncios {
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+        @include m.grid(4, 2rem);
+    }
+
+    @include m.laptop {
+        @include m.grid(3, 2rem);
+    }
+
+    &.sec-anuncios {
+        @include m.tablet {
+            @include m.grid(2, 2rem);
+        }
+        
+        @include m.laptop {
+            @include m.grid(3, 2rem);
+        }  
+    }
+}
+
+.anuncio {
+    background-color: lighten(v.$gris, .5);
+    border: 1px solid darken(v.$gris, 10);
+
+    &.propiedad-uno {
+        @include m.tablet {
+            grid-column: 1 / 3;
+        }
+
+        @include m.laptop {
+            grid-column: unset;
+        }
+
+        &.sec-anuncio {
+            grid-column: unset;
+        }
+    }
+
+    &.propiedad-dos {
+        @include m.tablet {
+            grid-column: 3 / 5;
+        }
+
+        @include m.laptop {
+            grid-column: unset;
+        }
+
+        &.sec-anuncio {
+            grid-column: unset;
+        }
+    }
+
+    &.propiedad-tres {
+        @include m.tablet {
+            grid-column: 2 / 4;
+        }
+
+        @include m.laptop {
+            grid-column: unset;
+        }
+
+        &.sec-anuncio {
+            grid-column: unset;
+        }
+    }
+
+    .contenido-anuncio {
+        padding: 2rem;
+    }
+
+    h3, p {
+        margin: 0;
+    }
+
+    .informacion {
+        text-align: center;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+
+        @include m.tablet {
+            text-align: justify;
+        }
+    }
+
+    .precio {
+        color: v.$verde;
+        font-weight: v.$bold;
+        font-size: 2.8rem;
+    }
+}
+
+.iconos-caracteristicas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    li {
+        display: flex;
+        gap: 2rem;
+
+        p {
+            font-weight: v.$black;
+        }
+    }
+}
+
+.botones-sesion {
+    display: flex;
+    flex-direction: column;
+
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+}

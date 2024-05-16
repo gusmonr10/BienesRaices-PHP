@@ -1,0 +1,66 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.alerta {
+    margin-bottom: 1rem;
+    padding: .5rem;
+    color: v.$blanco;
+    text-align: center;
+    font-weight: v.$bold;
+
+    &.error {
+        background-color: v.$rojo;
+    }
+
+    &.exito {
+        background-color: v.$verde_exito;
+        margin-bottom: 0;
+
+        p {
+            margin: 0;
+            color: v.$blanco;
+        }
+    }
+}
+
+.botones-admin {
+    display: flex;
+    gap: 2rem;
+}
+
+table.propiedades {
+    margin-top: 3rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead {
+        background-color: v.$amarillo;
+
+        th {
+            color: v.$blanco;
+            padding: 1rem;
+        }
+    }
+
+    tbody {
+        text-align: center;
+    }
+
+    .imagen-tabla {
+        width: 14rem;
+        margin: 0 auto;
+    }
+
+    .boton-editar, .boton-borrar {
+        height: 4.5rem;
+    }
+
+    .boton-borrar {
+        margin-top: 1.5rem;
+    }
+}
+
+.imagen-actualizar {
+    width: 20rem;
+    margin-bottom: 1rem;
+}

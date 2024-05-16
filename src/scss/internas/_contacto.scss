@@ -1,0 +1,90 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+    fieldset {
+        margin-bottom: 2rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+    
+    legend {
+        font-size: 2rem;
+        color: v.$gris_oscuro;
+    }
+
+    label {
+        font-weight: v.$bold;
+        display: block;
+    }
+
+    input:not([type="submit"]), textarea, select {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        background-color: v.$blanco;
+        border: 2px solid v.$gris;
+        border-radius: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    textarea {
+        height: 20rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+        color: v.$gris_oscuro;
+        margin: 2rem 0 0 0;
+    }
+
+    .primero {
+        margin-top: 0;
+    }
+
+    .forma-contacto {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 30rem;
+    }
+
+    input[type="radio"] {
+        margin-bottom: 0;
+    }
+
+    .boton-verde {
+        width: 100%;
+
+        @include m.tablet {
+            width: auto;
+        }
+    }
+}
+
+.formulario-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .volver {
+        margin-top: 0;
+
+        @include m.tablet {
+            margin-top: 2rem;
+        }
+    }
+
+    input[type="submit"], .volver {
+        @include m.tablet {
+            height: 4.9rem;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-nosotros {
+    @include m.grid(1, 2rem);
+
+    @include m.laptop {
+        @include m.grid(2, 3rem);
+    }
+
+    .imagen picture {
+        height: 100%;
+    }
+
+    .imagen-nosotros {
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.texto-nosotros {
+    blockquote {
+        font-weight: v.$black;
+        font-size: 2.2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    p{
+        text-align: justify;
+    }
+}
+
+.seccion-iconos-nos {
+    margin-top: 3rem;
+}

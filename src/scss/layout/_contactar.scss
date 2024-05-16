@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.no-webp .imagen-contacto {
+    background-image: url('../img/encuentra.jpg');
+}
+
+.webp .imagen-contacto {
+    background-image: url('../img/encuentra.webp');
+}
+
+.imagen-contacto {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 8rem 0;
+    margin-top: 2.5rem;
+
+    .contenido-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+        font-weight: v.$black;
+        color: v.$blanco;
+        line-height: 1.5;
+
+        @include m.telefono {
+            font-size: 3.3rem;
+            line-height: 1.8;
+        }
+
+        @include m.tablet {
+            font-size: 4rem;
+        }
+    }
+
+    p {
+        font-size: 1.8rem;
+        color: v.$blanco;
+        text-align: center;
+        margin-top: 0;
+    }
+}

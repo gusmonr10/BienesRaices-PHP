@@ -1,0 +1,91 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.seccion-inferior {
+    margin-bottom: 3rem;
+
+    @include m.grid(1, 2rem);
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    @include m.laptop {
+        grid-template-columns: 2fr 1fr;
+        gap: 5rem;
+    }
+
+    h3 {
+        margin-top: 0;
+    }
+}
+
+.entrada-blog {
+    margin-bottom: 3rem;
+    
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+
+    &:last-of-type {
+        @include m.tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    picture {
+        @include m.tablet {
+            height: 100%;
+        }
+    }
+
+    .imagen-entrada {
+        @include m.tablet {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.texto-entrada {
+    margin-top: 2rem;
+
+    @include m.tablet {
+        margin-top: 0;
+    }
+
+    .texto {
+        margin-top: 0;
+        text-align: justify;
+    }
+
+    a {
+        color: v.$negro;
+    }
+
+    h4 {
+        margin: 0;
+        line-height: 1.4;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: .5rem;
+            background-color: v.$verde;
+            margin-top: .7rem;
+        }
+    }
+}
+
+.meta {
+    margin: 1rem 0;
+
+    span {
+        color: v.$amarillo;
+    }
+}

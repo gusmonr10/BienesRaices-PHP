@@ -1,0 +1,19 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.iconos-nosotros {
+    @include m.grid(1, 2rem);
+
+    @include m.laptop {
+        @include m.grid(3, 2rem);
+        margin-top: 4rem;
+    }
+}
+
+.icono {
+    text-align: center;
+
+    img {
+        height: 10rem;
+    }
+}
